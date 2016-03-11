@@ -1,0 +1,15 @@
+﻿@using  ASP.NET_MVC5_Bootstrap_3._3._4_LESS1.HtmlHelpers
+@model  ASP.NET_MVC5_Bootstrap_3._3._4_LESS1.Models.ProdutosViewModel
+
+
+
+@foreach (var p in Model.Produtos)
+{
+    @Html.Partial("ProdutoDetalhes", p)
+
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLInks(Model.Paginacao, x => Url.Action("ListaProdutos", new { pagina = x }))
+</div>
+
